@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="lib/default.min.css">
+    <script src="lib/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <title>How To Node&PUG</title>
 </head>
 <body>
     <main>
@@ -22,7 +25,7 @@
             <img src="img/s1.png">
             <p>
                 Нам понадобится два пакета:
-                <pre><code>
+                <pre><code class="javascript">
                             "pug": "^2.0.0-rc.4", 
                             "pug-cli": "^1.0.0-alpha6",
                     </code></pre>
@@ -32,7 +35,12 @@
                 После того, как мы их добавили, нужно установить недостающие пакеты. Для этого правой кнопкой мыши
                 кликните по npm -> "Install Missing npm Packages"
             </p>
-            
+            <h3>Создание шаблона PUG</h3>
+            <pre><code class="javascript">
+                    function main(){
+                        console.log("Hello World")
+                    }
+            </code></pre>
         </article>
     </main>
 </body>
