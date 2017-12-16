@@ -36,11 +36,51 @@
                 кликните по npm -> "Install Missing npm Packages"
             </p>
             <h3>Создание шаблона PUG</h3>
+            <p>Создадим шаблон PUG, который будет расширять index.pug
+                и назовем его "dialog.pug"
+            </p>
             <pre><code class="javascript">
-                    function main(){
-                        console.log("Hello World")
-                    }
+                    extends layout
+                    block append content
+                        div Dialog with #{targetuserName}                    
             </code></pre>
+            <p>А так изменится наш "index.js" в папке "routes"</p>
+            <pre><code class="javascript">
+                    router.get('/dialog', function (req, res) {
+                        //заполним тестовые данные
+                        var data = {
+                            userid: 1,
+                            targetuserid: 2,
+                            targetuserName: 'Max',
+                            history: [
+                                {
+                                    author: 1,
+                                    msg_txt: 'Hey, Dude!',
+                                    id: 1
+                                },
+                                {
+                                    author: 1,
+                                    msg_txt: 'This is wonderful!',
+                                    id: 2
+                                },
+                                {
+                                    author: 2,
+                                    msg_txt: 'Good morning!',
+                                    id: 3
+                                },
+                                {
+                                    author: 2,
+                                    msg_txt: 'Sure!',
+                                    id: 4
+                                }
+                            ]
+                        }
+                        //в результате функции render сервер 
+                        //сформирует html документ и отправит его в браузер 
+                        res.render('dialog', data);
+                    });                   
+            </code></pre>
+
         </article>
     </main>
 </body>
