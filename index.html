@@ -26,8 +26,8 @@
             <p>
                 Нам понадобится два пакета:
                 <pre><code class="javascript">
-                            "pug": "^2.0.0-rc.4", 
-                            "pug-cli": "^1.0.0-alpha6",
+"pug": "^2.0.0-rc.4", 
+"pug-cli": "^1.0.0-alpha6",
                     </code></pre>
             </p>
             <img src="img/s2.png">
@@ -45,40 +45,40 @@
                         div Dialog with #{targetuserName}                    
             </code></pre>
             <p>А так изменится наш "index.js" в папке "routes"</p>
-            <pre><code class="javascript">
-                    router.get('/dialog', function (req, res) {
-                        //заполним тестовые данные
-                        var data = {
-                            userid: 1,
-                            targetuserid: 2,
-                            targetuserName: 'Max',
-                            history: [
-                                {
-                                    author: 1,
-                                    msg_txt: 'Hey, Dude!',
-                                    id: 1
-                                },
-                                {
-                                    author: 1,
-                                    msg_txt: 'This is wonderful!',
-                                    id: 2
-                                },
-                                {
-                                    author: 2,
-                                    msg_txt: 'Good morning!',
-                                    id: 3
-                                },
-                                {
-                                    author: 2,
-                                    msg_txt: 'Sure!',
-                                    id: 4
-                                }
-                            ]
-                        }
-                        //в результате функции render сервер 
-                        //сформирует html документ и отправит его в браузер 
-                        res.render('dialog', data);
-                    });                   
+<pre><code class="javascript">
+router.get('/dialog', function (req, res) {
+    //заполним тестовые данные
+    var data = {
+        userid: 1,
+        targetuserid: 2,
+        targetuserName: 'Max',
+        history: [
+            {
+                author: 1,
+                msg_txt: 'Hey, Dude!',
+                id: 1
+            },
+            {
+                author: 1,
+                msg_txt: 'This is wonderful!',
+                id: 2
+            },
+            {
+                author: 2,
+                msg_txt: 'Good morning!',
+                id: 3
+            },
+            {
+                author: 2,
+                msg_txt: 'Sure!',
+                id: 4
+            }
+        ]
+    }
+    //в результате функции render сервер 
+    //сформирует html документ и отправит его в браузер 
+    res.render('dialog', data);
+});                                                           
             </code></pre>
 
         </article>
@@ -87,11 +87,21 @@
 </html>
 
 <style>
-    article {
-        width: 50%;
-        margin-left: 25%;
-    }
-    img {
+    @media screen and (min-width: 200px){
+        article {
         width: 100%;
+        }
+        img {
+            width: 100%;
+        }
     }
+    @media  screen and (min-width: 600px) {
+        article {
+        width: 65%;
+      }
+        img {
+            width: 100%;
+        } 
+    }
+    
 </style>
