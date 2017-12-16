@@ -40,9 +40,9 @@
                 и назовем его "dialog.pug"
             </p>
             <pre><code class="javascript">
-                    extends layout
-                    block append content
-                        div Dialog with #{targetuserName}                    
+extends layout
+block append content
+    div Dialog with #{targetuserName}                    
             </code></pre>
             <p>А так изменится наш "index.js" в папке "routes"</p>
 <pre><code class="javascript">
@@ -87,15 +87,15 @@ router.get('/dialog', function (req, res) {
 </html>
 
 <style>
-    @media screen and (min-width: 200px){
+    @media screen and (min-width: 300px){
         article {
-        width: 100%;
+            width: 100%;
         }
         img {
             width: 100%;
         }
     }
-    @media  screen and (min-width: 600px) {
+    @media  screen and (min-width: 1200px) {
         article {
         width: 65%;
       }
